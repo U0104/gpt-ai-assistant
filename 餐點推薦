@@ -1,0 +1,27 @@
+import random
+
+def recommend_dish(taste_preference):
+    # 定義一些餐點列表
+    spicy_dishes = ["辣子雞丁", "麻婆豆腐", "宮保雞丁", "香辣蝦"]
+    sweet_dishes = ["紅燒肉", "蜜汁排骨", "糖醋魚", "椰汁雞"]
+    savory_dishes = ["牛肉麵", "餃子", "叉燒包", "炒飯"]
+    sour_dishes = ["酸辣湯", "檸檬雞", "酸菜魚", "梅子豬腳"]
+
+    # 根據口味偏好推薦餐點
+    if taste_preference == "辣":
+        return random.choice(spicy_dishes)
+    elif taste_preference == "甜":
+        return random.choice(sweet_dishes)
+    elif taste_preference == "鹹":
+        return random.choice(savory_dishes)
+    elif taste_preference == "酸":
+        return random.choice(sour_dishes)
+    else:
+        return "抱歉，沒有符合您口味的推薦餐點。"
+
+# 主程式
+if __name__ == "__main__":
+    print("歡迎使用餐點推薦系統！")
+    taste_preference = input("請輸入您的口味偏好（辣、甜、鹹、酸）：")
+    recommended_dish = recommend_dish(taste_preference)
+    print(f"我們推薦您嘗試：{recommended_dish}")
